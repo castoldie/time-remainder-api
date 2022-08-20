@@ -53,3 +53,10 @@ pypi_test:
 
 pypi:
 	@twine upload dist/* -u $(PYPI_USERNAME)
+
+run_api:
+	@uvicorn time_remainder.api.fast:app --reload --port=8000
+
+run_streamlit:
+	@streamlit run time_remainder/frontend/streamlit.py
+	
